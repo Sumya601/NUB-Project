@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load mptt_tags %}
+{% load review_extras %}
+
+
+{% block content %}
+
+
+{% include 'message.html' %}
+
+
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" data-interval="2000">
+  <div class="carousel-inner">
+    {% for i in sliders %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <a href="{{i.url}}">
+        <img src="{{i.image.url}}" class="d-block w-100" style="max-height: 500px; height: auto; object-fit: cover;" alt="Chroma Images">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>
+</div>
+
+
+
+<section>
+  <div class="container pt-5">
+    <h2 class="font-weight-bold">Available Product Categories</h2>
+    <nav class="row gy-4">
+      <div class="col-lg-12 col-md-12">
+        <div class="row">
+
+          {% for category in categories %}
+          <div class="col-12 col-lg-1 d-none d-lg-block"> <!-- Hide on mobile, display on larger devices -->
+            <a href="{% url 'category' %}" class="text-center d-flex flex-column justify-content-center">
+              <button type="button" class="btn btn-outline-secondary mx-auto p-3 mb-2" data-mdb-ripple-color="dark">
+                <img class="w-100 rounded-lg" style="height: 60px;object-fit:cover;" src="{{category.image.url}}">
+              </button>
+              <div class="text-dark">{{category.name|truncatechars:80}}</div>
+            </a>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+
+
+   <div class="container my-5">
+    <header class="mb-4">
+      <h3>New products</h3>
+    </header>
+
+    <div class="row">
+      {% for product in products %}
+      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+        <div class="card w-100 my-2 shadow-2-strong">
+            
+            <a href="{{product.get_absolute_url}}">
+          <img src="{{product.image.url}}" class="card-img-top" />
+          </a>
+          <div class="card-body d-flex flex-column">
+              
+              <a href="{{product.get_absolute_url}}">
+            <h5 class="card-title">{{product.title|truncatechars:80}}</h5>
+            
+            
+            
+            <p class="card-text">{{product.selling_price}} Tk
+            <span class="discounted-price">{{product.offering_price}} Tk</span>
+            </p>
+            <div class="ratings">
+            {% for i in product.average_review|times %}
+              <span class="fa fa-star"></span>
+            {% endfor %}
+            <span class="average-rating">{{product.average_review}}</span>
+            <span class="total-reviews">({{product.total_review}})</span>
+          </div>
+            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+              <a href="{{product.get_absolute_url}}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+              <a href="{% url 'wishlist_add' id=product.id %}" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+ {% endfor %}
+    
+     
+   
+    
+     
+     
+      
+    </div>
+  </div>
+
+
+  <section class="mt-5" style="background-color: #f5f5f5;">
+  <div class="container text-dark pt-3">
+    <header class="pt-4 pb-3">
+      <h3>Why choose us</h3>
+    </header>
+
+    <div class="row mb-4">
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Reasonable prices</h6>
+            <p>We believe that quality electronics shouldn't break the bank. That's why we offer reasonable prices on all our products.</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Best quality</h6>
+            <p>We stand by the quality of our products, and our stringent quality control ensures that you get the best.</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Fast Shipping</h6>
+            <p>With our efficient shipping system, your order will reach you quickly, no matter where you are.</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Customer satisfaction</h6>
+            <p>Our satisfied customers are a testament to our commitment to excellence.</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Happy customers</h6>
+            <p>10000+</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-box fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Thousand items</h6>
+            <p>With over a thousand items, you're sure to find exactly what you're looking for.</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+    </div>
+  </div>
+  <!-- container end.// -->
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="card p-4 bg-primary">
+      <div class="row align-items-center">
+        <div class="col">
+          <h4 class="mb-0 text-white">Best products and brands in store</h4>
+          <p class="mb-0 text-white-50">Trendy products and text to build on the card title</p>
+        </div>
+        <div class="col-auto"><a class="btn btn-white text-primary shadow-0" href="{% url 'category' %}">Discover</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

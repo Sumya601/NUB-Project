@@ -1,0 +1,275 @@
+{% load static %}
+
+<!--<nav class="navbar navbar-expand-xl navbar-default sticky-top">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" href="{% url 'home' %}">-->
+<!--      <img src="/static/images/logo-large.png" alt="Logo" height="50">-->
+<!--    </a>-->
+
+<!--     <div class="collapse navbar-collapse" id="navbarNav">-->
+<!-- <ul class="navbar-nav ml-auto">-->
+<!--    <li class="nav-item">-->
+<!--          <a class="nav-link" href="/">Home</a>-->
+<!--        </li>-->
+<!--    <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'about' %}">About</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'contact' %}">Contact</a>-->
+<!--        </li>-->
+        
+<!--        </ul>-->
+<!--        </div>-->
+
+<!--    <span class="d-inline-block text-truncate" style="max-width: 150px;">-->
+<!--      <a class="btn btn-sm my-0 float-left order-1" href="{% url 'category' %}">-->
+<!--        <i class="fe fe-menu font-size-sm"></i>-->
+<!--        Category-->
+<!--      </a>-->
+      
+      
+<!--    </span>-->
+  
+
+<!--    {% if request.user.is_authenticated %}-->
+<!--    <li class="nav-item dropdown order-3 list-unstyled">-->
+<!--      <a class="nav-link f-16 text-inherit font-weight-medium " id="navbarLanding"-->
+<!--        data-toggle="dropdown" href="{% url 'customerinfo' %}">-->
+<!--        <i class="fe fe-user mr-1"></i>-->
+<!--      </a>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <a href="" class="dropdown-item"> <i class="fe fe-user mr-1"></i> <b> Hi, {{user.first_name}} !</b>  </a>-->
+
+<!--        <a href="{% url 'customer_orders' %}" class="dropdown-item"><i class="fe fe-shopping-bag mr-1"></i> My-->
+<!--          Orders</a>-->
+
+<!--        <a href="{% url 'review' %}" class="dropdown-item"> <i class="fe fe-star mr-1"></i> Review My Order</a>-->
+
+<!--        <a href="{% url 'saved_products' %}" class="dropdown-item"><i class="fe fe-heart mr-1"></i> Saved Products</a>-->
+
+
+<!--        <hr class="mx-3">-->
+
+<!--        <a href="{% url 'customerinfo' %}" class="dropdown-item">-->
+<!--          <i class="fe fe-settings mr-1"></i>-->
+<!--           My Account-->
+<!--        </a>-->
+
+<!--        <a href="{% url 'address' %}" class="dropdown-item">-->
+<!--          <i class="fe fe-map-pin mr-1"></i>-->
+<!--           My Address-->
+<!--        </a>-->
+<!--        <a href="{% url 'user_logout' %}" class="dropdown-item text-danger">-->
+<!--          <i class="fe fe-power mr-1"></i>-->
+<!--           Log out-->
+<!--        </a>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--    {% else %}-->
+<!--    <span class="order-3">-->
+<!--      <small class="float-left">Welcome,</small> <br>-->
+<!--      <a class="text-hover-primary font-weight-semi-bold text-inherit" href="{% url 'user_login' %}">Login</a> |-->
+<!--      <a class="text-hover-primary font-weight-semi-bold text-inherit" href="{% url 'signup' %}">Signup</a>-->
+<!--    </span>-->
+<!--    {% endif %}-->
+
+
+<!--    <a href="{% url 'cart' %}"-->
+<!--      class="order-lg-4 order-4 btn btn-sm rounded-pill {% if cart_count > 0 %} btn-light-warning {% else %} btn-light {% endif %} f-17"><i-->
+<!--        class="fe fe-shopping-bag f-17"></i> {{cart_count}}</a>-->
+
+<!--    <div class="col-12 col-md-4 order-lg-2 order-3"> <!-- Adjust the column size here -->
+<!--  <form method='get' action="{% url 'search-product' %}" class="d-flex align-items-center mx-auto mt-3 mt-md-0">-->
+<!--    <span class="position-absolute pl-3 search-icon">-->
+<!--      <i class="fe fe-search"></i>-->
+<!--    </span>-->
+<!--    <input name="q" value="{{ query }}" class="form-control py-2 pl-6 bg-light small-search-bar" style="border: none;"-->
+<!--      placeholder="What are you looking for ?">-->
+<!--  </form>-->
+<!--</div>-->
+
+  
+<!--  </div>-->
+<!--</nav>-->
+
+
+
+
+
+
+<div class="main-navbar shadow-sm sticky-top">
+        <div class="top-navbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                        <!--<h5 class="brand-name">Funda Ecom</h5>-->
+                        <img src="/static/assets/images/logo/logo-3.png" alt="Logos" height="50">
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <form method='get' role="search" action="{% url 'search-product' %}">
+                            <div class="input-group">
+                                <input name="q" type="search" placeholder="What are you looking for ?" class="form-control" required/>
+                                <button class="btn bg-white" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <ul class="nav justify-content-end">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'cart' %}">
+                                    <i class="fa fa-shopping-cart"></i> Cart
+                                </a>
+                            </li>
+                            <!--<li class="nav-item">-->
+                            <!--    <a class="nav-link" href="{% url 'saved_products' %}">-->
+                            <!--        <i class="fa fa-heart"></i> Wishlist-->
+                            <!--    </a>-->
+                            <!--</li>-->
+                             {% if request.user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user"></i> Hi, {{user.first_name}} ! 
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'customerinfo' %}"><i class="fa fa-user"></i> Profile</a></li>
+                                <!--<li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>-->
+                                <!--<li><a class="dropdown-item" href="{% url 'saved_products' %}"><i class="fa fa-heart"></i> My Wishlist</a></li>-->
+                                <!--<li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>-->
+                                <li><a class="dropdown-item" href="{% url 'user_logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                            
+                            {% else %}
+                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'user_login' %}">
+                                    <i class="fa fa-sign-in"></i> Login
+                                </a>
+                                
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">
+                                    <i class="fa fa-user-plus"></i> Sign up
+                                </a>
+                            </li>
+                            
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="/">
+                    <img class="navbar-brand d-block d-sm-block d-md-none d-lg-none" src="/static/assets/images/logo/logo-4.png" alt="Logo" height="50">
+                </a>
+                
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">|||</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'category' %}">All Categories</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=pc">Desktop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=laptop">Laptop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=1000">Monitor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=4000">Processors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=5000">Motherboard</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=mouse">Mouse</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=keyboard">Keyboard</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=headphone">Head Phone</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=3000">Ram</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=2000">Graphics Card</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/category/?category=6000">Power Supply</a>
+                        </li>
+                        <!-- <li class="nav-item">-->
+                        <!--    <a class="nav-link" href="#">Laptop Battery</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .main-navbar{
+    border-bottom: 1px solid #ccc;
+}
+.main-navbar .top-navbar{
+    background-color: #2874f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.main-navbar .top-navbar .brand-name{
+    color: #fff;
+}
+.main-navbar .top-navbar .nav-link{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.main-navbar .top-navbar .dropdown-menu{
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item{
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i{
+    width: 20px;
+    text-align: center;
+    color: #2874f0;
+    font-size: 14px;
+}
+.main-navbar .navbar{
+    padding: 0px;
+    background-color: #ddd;
+}
+.main-navbar .navbar .nav-item .nav-link{
+    padding: 8px 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+</style>

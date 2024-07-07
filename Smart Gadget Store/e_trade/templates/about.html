@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load templatehelpers %}
+{% load review_extras %}
+{% load mptt_tags %}
+
+<title> e-gadget Store | Categories </title>
+
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container about-container">
+  <div class="row">
+    <div class="col-lg-6">
+      <img src="/static/assets/images/about/1520193432540.jpg" alt="About Us" class="img-fluid about-image">
+    </div>
+    <div class="col-lg-6">
+      <div class="about-content">
+        <h2 class="about-heading">About Us</h2>
+        <p class="about-text">Welcome to e-gadget Store, your ultimate online shopping destination. We pride ourselves on curating a diverse collection of high-quality products that cater to your every need.</p>
+        <p class="about-text">Our journey began in 2 years with a vision to revolutionize the way people shop. Today, we're a leading name in the industry, known for our commitment to excellence and unparalleled customer satisfaction.</p>
+        <!--<p class="about-text">At eTrade Store, we believe that shopping is not just a transaction, but an experience. Our team of experts scours the globe to bring you products that combine innovation, style, and functionality.</p>-->
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block footer %}{% endblock %}

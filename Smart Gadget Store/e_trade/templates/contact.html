@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load templatehelpers %}
+{% load review_extras %}
+{% load mptt_tags %}
+
+<title> ET-Shop Store | Contact Us </title>
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="contact-info">
+        <h1>Contact Information</h1>
+        <div class="contact-details">
+          <h3 class="contact-item"><i class="fa fa-map-marker"></i> Askona, Airport, Dhaka</h3>
+          <h3 class="contact-item"><i class="fa fa-phone"></i> 01637699199</h3>
+          <h3 class="contact-item"><i class="fa fa-envelope"></i> egadget@gmail.com</h3>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d58392.585038346995!2d90.36966789195598!3d23.835073274599004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!3m2!1d23.804092999999998!2d90.4152376!4m5!1s0x3755c678e8d9d405%3A0xee33acb7a58fab49!2sAshkona%2C%20Dhaka!3m2!1d23.853447!2d90.4184093!5e0!3m2!1sen!2sbd!4v1692905209688!5m2!1sen!2sbd" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="visit-info">Visit Us</h2>
+      <p>We're conveniently located near [specific landmark or neighborhood] in [city], making it easy for you to pay us a visit. Our friendly staff is eager to assist you with all your shopping needs. Feel free to use the map above for directions.</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="customer-support-info">Customer Support</h2>
+      <p>If you have any questions or need assistance, our customer support team is available [mention working hours or availability]. You can also reach out to us via email or through our social media channels.</p>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.contact-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-info h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+  }
+
+  .contact-details {
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    margin: 10px 0;
+    color: #555;
+    font-size: 18px;
+  }
+
+  .social-icons {
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #555;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .social-icons a:hover {
+    color: #007bff; /* Change to your preferred hover color */
+  }
+
+  .map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+  }
+
+  .visit-info {
+    font-size: 18px;
+    color: #555;
+    margin-top: 40px;
+  }
+
+  .customer-support-info {
+    font-size: 18px;
+    color: #555;
+    margin-top: 40px;
+  }
+</style>
+{% endblock content %}
+
+
+
+
+{% block footer %}{% endblock %}
