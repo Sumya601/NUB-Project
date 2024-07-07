@@ -1,0 +1,286 @@
+.shareimg{
+	cursor: pointer;
+}
+
+.mediacontain1 {
+	right: 0;
+	position: absolute;
+	height: 46px;
+  }
+  
+  .loginmain {
+	display: inline-block;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+  }
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  .container1 {
+	position: relative;
+	font-family: 'Poppins', sans-serif;
+	border-radius: 6px;
+	background-image: url(../img/sbg.png);
+    background-position: right;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #f7fdfe;
+	padding: 40px 90px;
+	box-shadow: 0px 1px 5px 0.1px rgba(0, 0, 0, 0.656);
+  }
+
+  .container2 {
+	position: relative;
+	font-family: 'Poppins', sans-serif;
+	border-radius: 6px;
+	background-image: url(../img/sbg2.jpg);
+    background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #f7fdfe00;
+	padding: 40px 90px;
+	box-shadow: 0px 1px 5px 0.1px rgba(0, 0, 0, 0.656);
+  }
+
+  
+  .lninput{
+	width: 100%;
+	padding: 12px;
+	border: none;
+	border-radius: 4px;
+	margin: 5px 0;
+	opacity: 0.85;
+	display: inline-block;
+	font-size: 17px;
+	line-height: 20px;
+	text-decoration: none;
+  }
+  
+  .modal1 {
+	/* Hidden by default */
+	display: none;
+	position: fixed;
+	/* Stay in place */
+	z-index: 999;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: scroll;
+	/* Enable scroll if needed */
+	background-color: #3d3d3dc4;
+	transition: 0.5s ease-in-out;
+	animation: modal-opac 0.5s ease-out;
+  }
+  
+  @keyframes modal-opac {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto;
+	/* 5% from the top, 15% from the bottom and centered */
+	border-radius: 6px 6px 6px 6px;
+	width: 80%;
+	max-width: 1200px;
+	/* Could be more or less, depending on screen size */
+	animation: modal-pop 0.5s ease-out;
+  }
+
+
+  .modal-content2 {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto;
+	/* 5% from the top, 15% from the bottom and centered */
+	border-radius: 6px 6px 6px 6px;
+	width: 80%;
+	max-width: 900px;
+	/* Could be more or less, depending on screen size */
+	animation: modal-pop 0.5s ease-out;
+  }
+
+  textarea.form-control2 {
+  	min-height: calc(1.5em + 0.75rem + 300px) !important;
+	font-size: 1.1rem !important;
+	line-height: 1.5rem;
+  }
+
+  .form-control2 {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #ffffff70;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+	backdrop-filter: blur(10px);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control2:focus{
+	background-color: #ffffffa8 !important;
+}
+
+  @media (max-width: 991px){
+	.modal-content {
+		width: 100%;
+	}
+  }
+
+  @media (max-width: 768px){
+	.container1 {
+		padding: 30px 10px;
+	}
+  }
+  
+  @keyframes modal-pop {
+	0% {
+	  transform: translateY(-100%);
+	}
+	100% {
+	  transform: translateY(0%);
+	}
+  }
+  
+  /* The Close Button (x) */
+  .close {
+	position: absolute;
+	right: 35px;
+	top: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #ff7a7a;
+	z-index: 92;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #f44336;
+	cursor: pointer;
+  }
+  
+
+  
+
+
+/* CONTACT */
+
+
+.php-email-form {
+	width: 100%;
+	background: #ffffff00;
+}
+
+.php-email-form .form-group {
+	padding-bottom: 8px;
+}
+
+.php-email-form .error-message {
+	display: none;
+	color: #fff;
+	background: #ed3c0d;
+	text-align: left;
+	padding: 15px;
+	font-weight: 600;
+}
+
+.php-email-form .error-message br+br {
+	margin-top: 25px;
+}
+
+.php-email-form .sent-message {
+	display: none;
+	color: #fff;
+	background: #18d26e;
+	text-align: center;
+	padding: 15px;
+	font-weight: 600;
+}
+
+.php-email-form .loading {
+	display: none;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+}
+
+.php-email-form .loading:before {
+	content: "";
+	display: inline-block;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	margin: 0 10px -6px 0;
+	border: 3px solid #18d26e;
+	border-top-color: #eee;
+	-webkit-animation: animate-loading 1s linear infinite;
+	animation: animate-loading 1s linear infinite;
+}
+
+.php-email-form input,
+.php-email-form textarea {
+	border-radius: 4px;
+	box-shadow: none;
+	font-size: 14px;
+}
+
+.php-email-form input {
+	height: 44px;
+}
+
+.php-email-form textarea {
+	padding: 10px 12px;
+}
+
+.php-email-form button[type=submit] {
+	background: #36a17d;
+	border: 0;
+	padding: 10px 35px;
+	color: #fff;
+	transition: 0.4s;
+	border-radius: 50px;
+}
+
+.php-email-form button[type=submit]:hover {
+	background: #0678e3;
+}
+
+@-webkit-keyframes animate-loading {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes animate-loading {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
